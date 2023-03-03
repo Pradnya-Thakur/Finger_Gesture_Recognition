@@ -1,5 +1,6 @@
 #pragma once   //to ensure the current source file to be included only once in a single compilation.
 #include "../image.h"
+#include "../bmp_loader.c"
 
 #include <stdio.h>
 typedef int(*ImageFormatIdentifier_fp)(FILE* fp); //returns 1->yes 0->no
@@ -14,5 +15,4 @@ typedef struct image_loader_t
 }ImageLoader_t;
 
 #define IMAGE_LOADER_COUNT 1
-const ImageLoader_t loaders[IMAGE_LOADER_COUNT] = {NULL};
-
+const ImageLoader_t loaders[IMAGE_LOADER_COUNT] = {bmp_loader};
